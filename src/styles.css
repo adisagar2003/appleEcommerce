@@ -1,0 +1,320 @@
+body {
+  font-family: "Work Sans", sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;500;600&display=swap");
+:root {
+  --white: #fdfdfd;
+  --gray: #383838;
+  --blue: #1e90ff;
+  --black: #000000;
+}
+.section1-banner {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.section1-banner h1 {
+  font-weight: 200;
+  font-size: 100px;
+  color: var(--white);
+}
+.section1-banner p {
+  position: absolute;
+  left: 50%;
+  color: var(--white);
+}
+.section1-banner button {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  padding: 5px;
+  width: 260px;
+  font-size: 2rem;
+  background-color: black;
+  color: var(--white);
+  letter-spacing: 0.1rem;
+  clip-path: polygon(
+    50% 0%,
+    81% 5%,
+    100% 0,
+    100% 100%,
+    80% 95%,
+    50% 100%,
+    20% 95%,
+    0 100%,
+    0 0,
+    23% 5%
+  );
+  transition: 0.2s;
+}
+.section1-banner button:hover {
+  clip-path: polygon(
+    40% 15%,
+    77% 15%,
+    100% 10%,
+    100% 90%,
+    75% 85%,
+    40% 85%,
+    30% 100%,
+    0 50%,
+    0 50%,
+    30% 0
+  );
+  cursor: pointer;
+  padding: 10px;
+}
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECTION FOR 3d CUBE CONTROL
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+.section1-3d {
+}
+.cube {
+  width: 60%;
+  height: 60%;
+
+  background-color: rgba(255, 255, 255, 0.589);
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateX();
+  animation: spin 10s infinite;
+}
+.cube img {
+  width: 100%;
+  height: 100%;
+}
+.front-side {
+  background-color: white;
+  transform: translateZ(5rem);
+  transform: preserve-3d;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd;
+}
+.back-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-5rem);
+  background-color: var(--white);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd;
+  transform: preserve-3d;
+}
+.back-side i {
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
+  text-shadow: -2px -2px 5px black;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.left-side {
+  background-color: white;
+  width: 100%;
+  height: 29%;
+  position: absolute;
+  bottom: -11vh;
+  left: 0;
+  transform: rotateX(87deg);
+}
+.right-side {
+  position: absolute;
+  top: -11vh;
+  right: 0;
+  width: 99%;
+  height: 29%;
+  border: 1px solid white;
+  background-color: white;
+  transform: rotateX(87deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.692);
+}
+
+.sideway1 {
+  background-color: rgb(255, 255, 255);
+  width: 58%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+  top: 0;
+  right: -77px;
+  transform: rotateY(-90deg);
+}
+.sideway2 {
+  background-color: rgb(255, 255, 255);
+  width: 58%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border: 1px solid black;
+  left: -77px;
+  transform: rotateY(-90deg);
+}
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+END OF SECTION FOR 3d CUBE CONTROL
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECTION 2 Start
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+.section2 {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  position: relative;
+}
+.puttop {
+  position: absolute;
+  top: 0px;
+}
+.section2 h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 200;
+  font-size: 72px;
+
+  position: relative;
+}
+.section2 {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+.section2 img {
+  width: 50vh;
+  height: 50vh;
+  position: absolute;
+  top: 180px;
+}
+
+.section2 h1::before {
+  position: absolute;
+  content: "";
+  top: -20px;
+  z-index: -1;
+  left: 0;
+  height: 604px;
+  width: 600px;
+  transform: skewX(20deg);
+  background: linear-gradient(var(--blue), var(--white));
+}
+
+.section2__buynow {
+  margin-top: 10px;
+  padding: 4px;
+}
+
+.section2__buynow button {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  height: 40px;
+  border-radius: 30%;
+  border: none;
+  position: relative;
+  background: linear-gradient(var(--black) 80%, var(--white));
+  transition: linear-gradient 10s;
+  transition: 3s;
+}
+.section2__buynow button::after {
+  content: "Buy now";
+  color: black;
+  position: absolute;
+  top: 1rem;
+  background-color: rgb(0, 214, 214);
+  padding: 10px;
+  left: 2rem;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  z-index: -1;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  left: 0rem;
+  transition: 3s;
+}
+.section2__buynow button::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  border: 2px solid rgb(0, 214, 214);
+  border-radius: 50%;
+}
+.section2__buynow button:hover {
+  background: linear-gradient(var(--black) 50%, var(--white));
+}
+
+.section2__buynow button:hover .section2__buynow--button::after {
+  background: linear-gradient(var(--black) 50%, var(--white));
+  content: "Buy now";
+  color: black;
+  position: absolute;
+  top: 1rem;
+  background-color: rgb(0, 214, 214);
+  padding: 10px;
+  left: 2rem;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECTION 2 END
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECTION 3 START
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+.macbook-section {
+}
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECTION 3 END
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
